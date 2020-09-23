@@ -1,0 +1,38 @@
+body {
+    font-family: sans-serif;
+}
+
+h1 {
+    font-size: 20px;
+    vertical-align: top;
+}
+
+#certa1 {
+    color: green;
+    font-size: 14px;
+}
+
+#errada1 {
+    color: red;
+    font-size: 14px;
+}
+
+#certa2 {
+    color: green;
+    font-size: 14px;
+}
+
+#errada2 {
+    color: red;
+    font-size: 14px;
+}
+
+#certa3 {
+    color: green;
+    font-size: 14px;
+}
+
+#errada3 {
+    color: red;
+    font-size: 14px;
+}

@@ -1,38 +1,39 @@
 body {
-    font-family: sans-serif;
+    background-color: rgb(252, 247, 237);
+    font-family: Arial;
 }
 
 h1 {
+    text-align: center;
+}
+
+#name {
+    text-align: center;
     font-size: 20px;
-    vertical-align: top;
 }
 
-#certa1 {
+h2 {
+    text-align: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.5;
+}
+
+dl {
+    border: 2px solid;
+    height: 150px;
+    margin: 10px;
+    padding: 20px;
+}
+
+.right {
     color: green;
-    font-size: 14px;
 }
 
-#errada1 {
+.wrong {
     color: red;
-    font-size: 14px;
-}
-
-#certa2 {
-    color: green;
-    font-size: 14px;
-}
-
-#errada2 {
-    color: red;
-    font-size: 14px;
-}
-
-#certa3 {
-    color: green;
-    font-size: 14px;
-}
-
-#errada3 {
-    color: red;
-    font-size: 14px;
 }

@@ -1,28 +1,69 @@
-//Mostrar uma tela de boas-vindas na qual se peça, através de prompt, o nome do usuário antes de começar a prova.
-let name = prompt('Seja bem vindx! Qual é o seu nome?');
-let name1 = window.document.getElementById('c').innerText = `Olá, ${name}!`;
-//Mostrar uma tela na qual o usuário pode escolher se quer mesmo dar início a prova ou não. Caso ele não deseje iniciar, o fluxo deve ser encerrado. Caso ele queira, seguirá para a próxima etapa, descrita no item 3
-let startTest = prompt('Você quer iniciar o teste? Digite o número da sua resposta abaixo:\n 1.Sim \n 2.Não');
+const name = prompt('Seja bem vindx! Qual é o seu primeiro nome?');
+const welcome = window.document.getElementById('name');
+welcome.innerText = `Olá, ${name}!`;
+const startTest = prompt('Você quer iniciar o teste? \nDigite apenas o número da sua resposta abaixo:\n1- Sim \n2- Não');
 if (startTest == 1) {
-    let firstAnswer = prompt('Coloque o número correspondente a sua resposta. \n 1-Quem foi Ada Lovelace? \n 1. Atual diretora do YouTube \n 2. Ela foi a primeira mulher a programar na história \n 3. Co-fundadora e presidente da HTC');
-    if (firstAnswer == 2) {
-        window.document.getElementById('certa1').innerText = 'Pergunta 1 - Resposta certa';
-    } else {
-        window.document.getElementById('errada1').innerText = 'Pergunta 1 - Resposta errada';
-    }
-    let secondAnswer = prompt('Coloque o número correspondente a sua resposta. \n 2-Quem foi a diretora responsável pela programação de software para o projeto Apollo e Skyline da NASA? \n 1. Margaret Hamilton \n 2. Radia Perlman \n 3. Katherine Johnson');
-    if (secondAnswer == 1) {
-        window.document.getElementById('certa2').innerText = 'Pergunta 2 - Resposta certa';
-    } else {
-        window.document.getElementById('errada2').innerText = 'Pergunta 2 - Resposta errada';
-    }
-    let thirdAnswer = prompt('Coloque o número correspondente a sua resposta. \n 3-Quem é conhecida como “A Rainha da Computação”? \n 1.Grace Murray Hoppe \n 2.Grace Hopp \n 3.Grace Murray Hopp');
-    if (thirdAnswer == 1) {
-        window.document.getElementById('certa3').innerText = 'Pergunta 3 - Resposta certa';
-    } else {
-        window.document.getElementById('errada3').innerText = 'Pergunta 3 - Resposta errada';
-    }
+    const chooseTestType = prompt('Digite o número do teste que deseja iniciar:\n\n1- Conhecimentos gerais\n2- HTML e JS');
+    switch (chooseTestType) {
+        case '1':
+            alert('Boa sorte!')
+            const instructions = confirm('Digite apenas o número da alternativa correta para as proximas perguntas.');
+            getAnswer(
+                '1. Quem foi Ada Lovelace? \n\n1- Atual diretora do YouTube \n2- Ela foi a primeira mulher a programar na história \n3- Co-fundadora e presidente da HTC\n',
+                1,
+                2
+            )
 
+            getAnswer(
+                '2. Quem foi a diretora responsável pela programação de software para o projeto Apollo e Skyline da NASA? \n\n1- Margaret Hamilton \n2- Radia Perlman \n3- Katherine Johnson\n',
+                2,
+                1
+            )
+
+            getAnswer(
+                '3. Quem é conhecida como “A Rainha da Computação”? \n\n1- Grace Murray Hoppe\n2- Grace Muray Hopp \n3- Grace Murray Hopp\n',
+                3,
+                1
+            )
+            alert('Parabéns, você finalizou o teste!')
+            break;
+        case '2':
+            getAnswer(
+                '1. Para incluir JavaScript em uma página HTML o elemento usado é ? \n\n1- head\n2- body\n3- script',
+                1,
+                3
+            )
+
+            getAnswer(
+                '2. O elemento "title" deve estar dentro do elemento? \n\n1- h1 \n2- head\n3- body',
+                2,
+                2
+            )
+
+            getAnswer(
+                '3. Que tipo de dados é Infinity? \n\n1- number\n2- boolean\n3- undefined',
+                3,
+                1
+            )
+            alert('Parabéns, você finalizou o teste!')
+            break;
+        default:
+            alert('Você não selecionou uma opção, atualize a página e volte novamente!');
+    }
 } else {
-    alert('Volte novamente quando estiver mais preparado! :)')
+    alert('Volte novamente quando estiver preparado para começar! :)');
+}
+
+//Parametro para exibir as perguntas na tela
+function getAnswer(question, questionNumber, correctAnswer) {
+    const startQuiz = prompt(question);
+    if (validAnswer(correctAnswer, startQuiz)) {
+        window.document.getElementById('right' + questionNumber).innerText = `Pergunta ${questionNumber}`;
+    } else {
+        window.document.getElementById('wrong' + questionNumber).innerText = `Pergunta ${questionNumber}`;
+    }
+}
+//validar as respostas de acordo com o que o usuario respondeu
+function validAnswer(correctAnswer, userAnswer) {
+    return correctAnswer == userAnswer
 }

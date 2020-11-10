@@ -27,8 +27,8 @@ A aplicação possuí duas opções de teste, sendo a primeira sobre conheciment
 * Informe o seu nome
 * Digite 1 para iniciar o teste
 * Escolha entre os dois tipos de teste:
- - Digite 1 para perguntas sobre "Conhecimentos gerais"
- - Digite 2 para perguntas sobre "HTML e JS"
+* Digite 1 para perguntas sobre "Conhecimentos gerais"
+* Digite 2 para perguntas sobre "HTML e JS"
 * Digite apenas o número das suas respostas!
 * Ao finalizar, o resultado será mostrado na tela.
 
